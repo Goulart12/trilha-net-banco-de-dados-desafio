@@ -1,0 +1,37 @@
+Exercício 1
+SELECT Nome, Ano FROM dbo.Filmes;
+
+Exercício 2
+SELECT Nome, Ano FROM dbo.Filmes ORDER BY Ano ASC;
+
+Exercício 3
+SELECT * FROM dbo.Filmes WHERE Nome LIKE '%De Volta para o Futuro%';
+
+Exercício 4
+SELECT Nome FROM dbo.Filmes WHERE ano = 1997;
+
+Exercício 5
+SELECT Nome, Ano FROM dbo.Filmes WHERE ano > 2000 ORDER BY ano DESC;
+
+Exercício 6
+SELECT * FROM dbo.Filmes WHERE Duracao BETWEEN 101 AND 149 ORDER BY Duracao ASC;
+
+Exercício 7
+SELECT Ano, COUNT(*) AS Quantidade FROM dbo.Filmes GROUP BY Ano ORDER BY Quantidade DESC;
+
+Exercício 8
+SELECT PrimeiroNome, UltimoNome FROM dbo.Atores WHERE Genero = 'M';
+SELECT * FROM dbo.Atores WHERE Genero = 'M'; (Pra ficar igual no README)
+
+Exercício 9
+SELECT PrimeiroNome, UltimoNome FROM dbo.Atores WHERE Genero = 'F' ORDER BY PrimeiroNome;
+SELECT * FROM dbo.Atores WHERE Genero = 'F' ORDER BY PrimeiroNome; (Pra ficar igual no README)
+
+Exercício 10
+SELECT F.Nome, G.Genero FROM dbo.FilmesGenero FG INNER JOIN dbo.Filmes F ON F.id = FG.IdFilme INNER JOIN dbo.Generos G ON G.id = FG.IdGenero;
+
+Exercício 11
+SELECT F.Nome, G.Genero FROM dbo.FilmesGenero FG INNER JOIN dbo.Filmes F ON F.id = FG.IdFilme INNER JOIN dbo.Generos G ON G.id = FG.IdGenero WHERE G.Genero = 'Mistério';
+
+Exercício 12
+SELECT F.Nome, A.PrimeiroNome, A.UltimoNome, EF.Papel FROM dbo.ElencoFilme EF INNER JOIN dbo.Filmes F ON F.id = EF.IdFilme INNER JOIN dbo.Atores A ON A.id = EF.IdAtor;
